@@ -1,0 +1,56 @@
+<div >
+  <mat-toolbar class="tool">
+    <mat-toolbar-row class="header1">
+      <a href=""><img src="assets/images/ClariosLogo.PNG" class="navbar-icon" alt="Clarios" /> </a>
+      <span class="menu-spacer"></span>
+      <span class="lblTime" style="color: white;">{{now | date: 'short'}}</span>
+      <div fxLayout="column" class="divUserDetails" style="color: white;">
+        <span class="user">Ajay Kumar</span> 
+        <span  class="userrole"> Area Supervisor</span>
+        <!-- {{logedInUser?.username}} -->
+      </div>
+      <!-- <span> {{logedInUser?.userRole}}</span> -->
+      <button mat-flat-button class="btnLogin">
+        Log IN
+      </button>
+      <mat-icon class="helpicon">help_outline</mat-icon>
+    </mat-toolbar-row>
+    <mat-toolbar-row class="header2">
+      <button mat-icon-button (click)="sidenav.toggle()" fxShow="true">
+        <mat-icon style="color: white;">menu </mat-icon>
+      </button>
+      <button mat-icon-button (click)="sidenav.toggle()" fxShow="true">
+        <mat-icon style="color: white;">home</mat-icon>
+      </button>
+      <!-- <span>Responsive Navigation</span> -->
+      <span class="menu-spacer"></span>
+      <div fxShow="true" fxHide.lt-md>
+        <!-- The following menu items will be hidden on both SM and XS screen sizes -->
+        <button mat-flat-button class="btn btndashboard">
+          Dashboard
+          <mat-icon>equalizer</mat-icon></button>
+        <button mat-flat-button class="btn btnOverhead">
+          Overhead<mat-icon>remove_red_eye</mat-icon>
+        </button>
+      </div>
+    </mat-toolbar-row>
+  </mat-toolbar>
+  <mat-sidenav-container fxFlexFill>
+    <mat-sidenav #sidenav mode="over" >
+      <mat-nav-list >      
+        <a href="#" mat-list-item class="ok"><mat-icon>home</mat-icon>Menu Item 1</a>
+        <a href="#" mat-list-item class="ok"><mat-icon>equalizer</mat-icon> Dashboard</a>
+        <a href="#" mat-list-item class="ok">Plant Name</a>
+        <a href="#" mat-list-item class="ok">Menu Item 4</a>
+        <a href="#" mat-list-item class="ok">Menu Item 5</a>
+       
+      </mat-nav-list>
+    </mat-sidenav>
+    <!-- <mat-sidenav-content fxFlexFill>Main content
+      <router-outlet></router-outlet>
+    </mat-sidenav-content> -->
+
+  </mat-sidenav-container>
+  
+</div>
+
